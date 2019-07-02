@@ -1,4 +1,4 @@
-import "isomorphic-fetch";
+import "cross-fetch";
 import { verbose } from "./logger";
 import { encodeBase64, decodeBase64 } from "./utils";
 import { Request } from "./request";

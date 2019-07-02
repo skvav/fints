@@ -1,6 +1,4 @@
-import { createLogger } from "winston";
-
-export const logger = createLogger();
+export const logger = {} as any;
 
 logger.silent = true;
 

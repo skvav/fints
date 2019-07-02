@@ -1,4 +1,4 @@
-import "isomorphic-fetch";
+import "cross-fetch";
 import { Dialog } from "./dialog";
 import { Segment, HKSPA, HISPA, HKKAZ, HIKAZ, HKSAL, HISAL, HKCDB, HICDB } from "./segments";
 import { Request } from "./request";
