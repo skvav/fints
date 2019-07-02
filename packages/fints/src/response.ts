@@ -30,12 +30,13 @@ export class Response {
      * @return An array of all matching segments. Can be empty if no segements matched the specified type.
      */
     public findSegments<T extends Segment<any>>(segmentClass: Constructable<T>): T[] {
-        const matchingStrings = this.segmentStrings.filter(str => str[0][0] === segmentClass.name);
+        const name = new segmentClass({}).type;
+        const matchingStrings = this.segmentStrings.filter(str => str[0][0] === name);
         return matchingStrings.map(segmentString => {
             const segment = new segmentClass(segmentString);
-            if (segment.type !== segmentClass.name) {
+            if (segment.type !== name) {
                 throw new Error(
-                    `Consistency check failed. Deserializing ${segmentClass.name} returned ${segment.type}.`,
+                    `Consistency check failed. Deserializing ${name} returned ${segment.type}.`,
                 );
             }
             return segment;
