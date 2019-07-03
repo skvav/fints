@@ -1,4 +1,8 @@
-export const logger = {} as any;
+export const logger = {
+    verbose: () => { /* nothing */ },
+    warn: () => { /* nothing */ },
+    error: () => { /* nothing */ },
+} as any;
 
 logger.silent = true;
 
